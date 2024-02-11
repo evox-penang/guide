@@ -22,6 +22,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 ```bash
 curl https://raw.githubusercontent.com/moto-common/android_device_motorola_targets/master/scripts/manifest_creator.py > ./manifest_creator.py
+mkdir -p ./.repo/local_manifests/
 curl https://raw.githubusercontent.com/moto-common/local_manifests/$ANDROID_VERSION/moto-common.xml > ./.repo/local_manifests/moto-common.xml
 python3 manifest_creator.py .repo/manifests/default.xml .repo/manifests/*.xml .repo/local_manifests/moto-common.xml .repo/local_manifests/a-remove.xml
 repo sync -j$(nproc --all) --force-sync
