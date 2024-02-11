@@ -33,9 +33,6 @@ repo sync -j$(nproc --all) --force-sync
 ```bash
 # device/qcom/sepolicyの内容にパッチ（ビルドエラー回避）
 ./device/motorola/targets/scripts/replace_camera_sepolicy.sh
-
-# カーネルコンフィグを作っておく（ダミー・ビルドエラー回避）
-echo "# DUMMY" > kernel/motorola/msm-5.4/arch/arm64/configs/vendor/$DEVICE_defconfig
 ```
 
 ## いざ、ビルド開始！
